@@ -1,0 +1,83 @@
+drop table gp_user;
+CREATE TABLE gp_user (
+    gp_user_id bigint NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(128) unique NOT NULL,
+    password VARCHAR(128) NOT NULL,
+    email    varchar(128),
+    create_date  DATETIME
+);
+
+drop table gp_wx_acct;
+CREATE TABLE gp_wx_acct (
+    gp_user_id bigint NOT NULL,
+    wx_id bigint NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    wx_acct varchar(128) unique NOT NULL,
+    wx_acct_pw varchar(128),
+    content varchar(256),
+    status int,
+    create_date DATETIME
+);
+
+drop table gp_wx_acct_cur;
+create table gp_wx_acct_cur (
+    gp_user_id bigint unique NOT NULL,
+    wx_id bigint unique NOT NULL,
+    wx_acct varchar(128)
+);
+
+drop table gp_wx_graph_group;
+create table gp_wx_graph_group (
+    wx_id bigint NOT NULL,
+    graph_group_id bigint NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    maintitle varchar(128),
+    status    int,
+    create_date DATETIME,
+    update_date DATETIME
+);
+
+drop table gp_wx_graph;
+create table gp_wx_graph (
+    wx_id bigint NOT NULL,
+    graph_group_id bigint NOT NULL,
+    graph_id bigint NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    maintitle varchar(128),
+    author    varchar(128),
+    graph_url varchar(128),
+    thumb_url varchar(128),
+    content   varchar(2000),
+    create_date DATETIME,
+    update_date DATETIME
+);
+
+drop table gp_wx_photo_group;
+create table gp_wx_photo_group (
+    wx_id bigint NOT NULL,
+    photo_group_id bigint NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    maintitle varchar(128),
+    content varchar(512),
+    raw_url varchar(128),
+    photo_url varchar(128),
+    thumb_url varchar(128),
+    raw_size  decimal(16,2),
+    status    int,
+    create_date DATETIME,
+    update_date DATETIME
+);
+
+drop table gp_wx_photo;
+create table gp_wx_photo (
+    wx_id bigint NOT NULL,
+    photo_group_id bigint NOT NULL,
+    photo_id bigint NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    maintitle varchar(128),
+    content varchar(512),
+    raw_url varchar(128),
+    photo_url varchar(128),
+    thumb_url varchar(128),
+    raw_size  decimal(16,2),
+    status    int,
+    create_date DATETIME,
+    update_date DATETIME,
+    price     decimal(16,2),
+    unit      varchar(32)
+);

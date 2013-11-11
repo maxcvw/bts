@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+body {
+  background: url(../img/bg_body-noise.png);
+  font-family: Microsoft YaHei, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  color: #61C168;
+}
+
+.navbar-cln {
+  /*background-color: #f8f8f8;*/
+  /*border-color: #e7e7e7;*/
+}
+
+.navbar-cln .navbar-brand {
+  color: black;
+}
+
+.navbar-cln .navbar-brand:hover,
+.navbar-cln .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+
+.navbar-cln .navbar-text {
+  color: #777777;
+}
+
+.navbar-cln .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-cln .navbar-nav > li > a:hover,
+.navbar-cln .navbar-nav > li > a:focus {
+  color: #61C168;
+  background-color: transparent;
+}
+
+.navbar-cln .navbar-nav > .active > a,
+.navbar-cln .navbar-nav > .active > a:hover,
+.navbar-cln .navbar-nav > .active > a:focus {
+  color: #61C168;
+  border-bottom: 4px solid #61C168;
+}
+
+.navbar-cln .main-nav{
+  margin: 40px 40px 0 200px;
+  font-size: 17px;
+}
+
+.top-blank {
+  height: 50px;
+  border-top: 1px solid #e7e7e7;
+}
+
+.footer {
+  margin-top: 50px;
+  padding: 30px 0;
+  background: #202020;
+  color: rgb(204, 204, 204);
+}
+
+.footer a {
+	color: #7F7F7F;
+	text-decoration: none;
+}
+
+.footer a:hover,
+a:focus {
+  color: #61C168;
+}
+
+
